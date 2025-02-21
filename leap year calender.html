@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year Challenge</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333; /* Dark text color */
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #2e8b57; /* Forest green */
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666; /* Darker grey for the text */
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: 2px solid #4caf50; /* Green border */
+            border-radius: 5px;
+            width: 60%;
+            transition: border 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: #2e8b57; /* Forest green on focus */
+            outline: none;
+        }
+
+        button {
+            background-color: #4caf50; /* Green button */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2e8b57; /* Dark green on hover */
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #ff6347; /* Tomato red for the result */
+            margin-top: 20px;
+        }
+
+        /* Background pattern */
+        body {
+            background-image: url('https://www.transparenttextures.com/patterns/diagonal-stripes-light.png');
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Leap Year Checker</h1>
+<p>Enter a year to check if it's a leap year or not.</p>
+
+<label for="year">Enter Year:</label>
+<input type="number" id="year" placeholder="Enter a year">
+<br><br>
+<button onclick="checkLeapYear()">Check Leap Year</button>
+
+<h2 id="result"></h2>
+
+<script>
+    function checkLeapYear() {
+        var year = document.getElementById('year').value;
+        
+        // Check if year is divisible by 4 and (not divisible by 100 or divisible by 400)
+        if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+            document.getElementById('result').innerHTML = year + " is a Leap Year!";
+        } else {
+            document.getElementById('result').innerHTML = year + " is not a Leap Year!";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2; /* Soft pink background */
+            color: #800000; /* Dark red text */
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff66b2; /* Light pink */
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            margin: 10px;
+            border: 2px solid #ff66b2;
+            border-radius: 5px;
+            width: 60%;
+        }
+
+        button {
+            background-color: #ff66b2; /* Light pink button */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff3385; /* Darker pink when hovered */
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #ff3399; 
+        }
+
+        .heart {
+            color: #ff3399;
+            font-size: 2em;
+        }
+
+        body {
+            background-image: url('https://www.transparenttextures.com/patterns/heart.png');
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Love Calculator</h1>
+<p>Enter two names to calculate your love percentage!</p>
+
+<label for="name1">Your Name:</label>
+<input type="text" id="name1" placeholder="Your name">
+<br><br>
+<label for="name2">Partner's Name:</label>
+<input type="text" id="name2" placeholder="Partner's name">
+<br><br>
+<button onclick="calculateLove()">Calculate Love Percentage</button>
+
+<h2 id="result"></h2>
+
+<script>
+    function calculateLove() {
+        var name1 = document.getElementById('name1').value;
+        var name2 = document.getElementById('name2').value;
+
+       
+        name1 = name1.replace(/\s/g, '').toLowerCase();
+        name2 = name2.replace(/\s/g, '').toLowerCase();
+
+      
+        var combinedNames = name1 + name2;
+        var lovePercentage = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+
+       
+        document.getElementById('result').innerHTML = "Your love percentage is " + lovePercentage + "%! <span class='heart'>❤️</span>";
+    }
+</script>
+
+</body>
+</html>
